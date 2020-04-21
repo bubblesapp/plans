@@ -1,13 +1,300 @@
-body {
+html, body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  min-height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+a {
+  word-wrap: break-word;
+}
+
+:root {
+  --dark-blue: #021352;
+  --medium-blue: #007AFF;
+  --light-blue: #E3F4FF;
+}
+
+#plan_bubble1, #new_bubble1 {
+  height: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#plan_bubble2 {
+  height: 300px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+}
+
+#new_bubble2 {
+  height: 300px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+#root {
+  min-height: 100%;
+  width: 100%;
+  background-color: #03076F;
+}
+
+.App {
+  font-family: 'Dosis', sans-serif;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100%;
+}
+
+.new-bg {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  background-color: #03076F;
+}
+
+.new-wrapper {
+  position: relative;
+  top: 0px;
+  z-index: 2;
+  align-self: center;
+  max-width: 500px;
+  min-height: 100%;
+  min-width: 300px;
+  padding: 32px;
+}
+
+.new-wrapper div p, .new-wrapper p {
+  color: white;
+}
+
+.new-wrapper input {
+  font-family: 'Dosis', sans-serif;
+  font-size: 14px;
+  width: calc(100% - 16px);
+  height: 24px;
+  border-radius: 4px;
+  border: 0;
+  padding: 8px;
+}
+
+.share {
+  margin-top: 8px;
+  padding: 16px;
+  color: white;
+  background-color: darkblue;
+  flex: 1;
+  flex-direction: column;
+  font-family: 'Dosis', sans-serif;
+}
+
+.share p, .share a {
+  color: white !important;
+}
+
+.person-input {
+  margin-top: 8px;
+}
+
+.plan-bg {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  background-color: var(--light-blue);
+}
+
+.plan-wrapper {
+  position: relative;
+  top: 0px;
+  z-index: 2;
+  align-self: center;
+  max-width: 500px;
+  height: 100%;
+  padding: 32px;
+}
+
+.plan {
+  background-color: rgba(255, 255, 255, 0.5);
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.plan-wrapper div p, .plan-wrapper p {
+  color: var(--dark-blue);
+}
+
+.text-book {
+  font-family: 'Dosis', sans-serif;
+  font-size: 16px;
+}
+
+.text-medium {
+  font-family: 'Dosis', sans-serif;
+  font-size: 16px;
+}
+
+.text-large {
+  font-family: 'Dosis', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.person {
+  color: var(--dark-blue);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.cta {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Dosis', sans-serif;
+  height: 40px;
+  border-radius: 5px;
+  background-color: dodgerblue;
+  border: 0;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.activities {
+  overflow: scroll;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 16px;
+}
+
+.activity {
+  padding-left: 16px;
+  padding-right: 16px;
+  margin: 8px;
+  background-color: white;
+  border-radius: 4px;
+}
+
+.activity p {
+  color: var(--dark-blue) !important;
+}
+
+.blue-rule {
+  width: 144px;
+  height: 4px;
+  border: 0;
+  border-radius: 2px;
+  background-color: var(--medium-blue);
+  margin-top: 32px;
+}
+
+.white-rule {
+  margin-top: 32px;
+  margin-bottom: 32px;
+  width: 144px;
+  height: 4px;
+  border: 0;
+  border-radius: 2px;
+  background-color: white;
+}
+
+#bubbles-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+}
+
+.bubbles-list-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bubbles-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.bubbles-list .emoji {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  font-size: 32px;
+  align-self: flex-start;
+}
+
+.bubbles-list .item-text {
+  color: var(--dark-blue);
+  font-size: 14px;
+  text-align: left;
+  flex: 1;
+  margin-left: 16px;
+}
+
+.bubbles-footer {
+  padding: 16px;
+  color: white;
+  background-color: darkblue;
+  flex: 1;
+  flex-direction: column;
+  font-family: 'Dosis', sans-serif;
+}
+
+.bubbles-footer p {
+  color: white !important;
+}
+
+.bubbles-footer label {
+  font-size: 12px;
+  width: 100%;
+}
+
+.bubbles-footer #email-input {
+  height: 24px;
+  font-size: 14px;
+  font-family: 'Dosis', sans-serif;
+  width: calc(100% - 16px);
+  border-radius: 4px;
+  border: 0;
+  padding: 8px;
+}
+
+input {
+  font-family: 'Dosis', sans-serif;
+}
+
+.agree {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.agree label {
+  align-self: flex-start;
+  flex: 1;
+  text-align: left;
+  margin-left: 16px;
 }

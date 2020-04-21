@@ -1,0 +1,13 @@
+import React from 'react';
+
+export type Props = {
+  name: string;
+}
+
+export const Activity: React.FC<Props> = ({name}) => {
+  return (
+    <div className={'activity'}>
+      <p>{name}</p>
+    </div>
+  )
+}

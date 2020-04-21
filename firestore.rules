@@ -1,0 +1,19 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /plans/{id} {
+      allow read: if true;
+      allow create: if 'createdBy' in request.resource.data
+      	&& 'activity' in request.resource.data
+        && 'people' in request.resource.data
+    }
+    match /emails/{id} {
+    	allow read: if false;
+      allow create: if 'email' in request.resource.data
+    }
+    match /activities/{id} {
+    	allow read: if true;
+      allow write: if false;
+    }
+  }
+}
